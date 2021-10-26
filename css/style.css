@@ -22,8 +22,19 @@
     color: #fff;
 
 }
+
+body{
+    background:#f9f9f9;
+}
+
+section{
+    min-height: 100vh;
+    padding:0 7%;
+    padding-top: 9rem;
+}
+
 html{
-font-size: 82.5%;
+font-size: 72.5%;
 overflow-x:hidden;
 }
 header{
@@ -34,7 +45,9 @@ justify-content: space-between;
 position: fixed;
 top:0;left: 0;
 z-index: 1;
-padding: 2rem;
+/* The z-index property specifies the stack order of an element.
+An element with greater stack order is always in front of an element with a lower stack order */
+padding: 2rem 6rem 2rem 2rem;
 /* margin-right: 1rem; */
 }
 header .logo{
@@ -47,18 +60,119 @@ color: var(--dark-blue);
 /* header.logo span{
 color: var(--dark-blue);
 } */
-header .navbar {
+header .navbar a{
 font-size: 1.7rem;
-margin-left: 0.7rem;
+margin: 10px 20px ;
 padding: 0.5rem, 2rem;
-border-radius:0.5rem ;
+border-radius:0.5rem;
 color: var(--dark-blue);
+align-items: right;
 }
+
+header .navbar a.active,
 header .navbar a:hover{
- /* background: rgb(190, 174, 235); */
  background: var(--blue);
  color:white;
- box-shadow: 0.5rem 1rem rgba(0,0,0,0.1);
+ box-shadow:0.5rem 1rem rgba(0,0,0,0.1);
+ /* /* margin-left:5px; */
+ margin-right: 5px; 
+}
+.container {
+    
+    cursor: pointer;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 2rem;
+    color:var(--blue);
 
+    /* display: none; */
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color:var(--dark-blue);
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+.home{
+    background:url(..\images\do-img.png) no-repeat;
+    /* The background-image property specifies an image to use as the background of an element.
+By default, the image is repeated so it covers the entire element. */
+/* By default, the background-image property repeats an image both horizontally and vertically. */
+    background-size: cover;
+    /* cover:Resize the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges */
+    background-position: center;
+    /* The background-position property sets the starting position of a background image. */
+}
+.home .content {
+    text-align: center;
+    /* padding-top: 3rem;
+    video */
+}
+.home .content h1{
+    font-style: italic;
+    font-size: 5rem;
+    font-weight: bold;
+}
+.home .content .btn{
+    display: inline-block;
+    padding: 0.7rem 3rem;
+    color:white;
+    background: var(--blue);
+    border-radius: 0.5rem;
+    box-shadow:0 0.5rem 1rem rgba(0,0,0,0.1) ;
+    margin-top: 1rem;
+    font-size: 1.7rem;
 
 }
+.home .content .btn:hover{
+    background:var(--dark-blue);
+}
+  /* media queries */
+  @media(max-width:1200px){
+    html{
+        font-size:55%;
+        }
+        
+  }
+  @media(max-width:991px){
+   .container{
+       display: block;
+   }
+   header .navbar{
+     position: absolute;
+     top: 100%; left: 0;
+     width: 100%;
+     background: #fff;
+    padding:2rem ;
+    border-top: 0.1rem solid rgba(0,0,0,0.1);
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+
+   }
+   header .navbar a{
+       display: block;
+       margin: 1.5rem 0;
+       font-size: 2rem;
+   }
+   header .navbar.nav-toggle{
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+  }
+
