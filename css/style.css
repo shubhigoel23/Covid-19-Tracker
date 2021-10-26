@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+:root{
+    --blue:#3c6382;
+    --dark-blue: #0a3d62;
+}
+/* The :root CSS pseudo-class matches the root element of a tree representing the document. */
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .3s cubic-bezier(.38,1.15,.7,1.12);
+
+
+}
+::selection{
+    background:var(--blue);
+    color: #fff;
+
+}
+html{
+font-size: 82.5%;
+overflow-x:hidden;
+}
+header{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+position: fixed;
+top:0;left: 0;
+z-index: 1;
+padding: 2rem;
+/* margin-right: 1rem; */
+}
+header .logo{
+  font-size: 2.5rem;
+  color:var(--dark-blue);
+}
+/* header.logo img{
+color: var(--dark-blue);
+} */
+/* header.logo span{
+color: var(--dark-blue);
+} */
+header .navbar {
+font-size: 1.7rem;
+margin-left: 0.7rem;
+padding: 0.5rem, 2rem;
+border-radius:0.5rem ;
+color: var(--dark-blue);
+}
+header .navbar a:hover{
+ /* background: rgb(190, 174, 235); */
+ background: var(--blue);
+ color:white;
+ box-shadow: 0.5rem 1rem rgba(0,0,0,0.1);
+
+
+}
