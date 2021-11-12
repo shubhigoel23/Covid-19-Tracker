@@ -41,16 +41,6 @@ fetch("https://coronavirus-tracker-api.herokuapp.com/v2/locations", {
   console.log(locations);
   // for accessing the loactions arrray
 
-  // locations
-  // .filter(locations=>{
-  //   const country=locations.country;
-  //   return country=='Afghanistan';
-  // })
-  // .forEach(location => {
-  //   console.log(location); 
-  // });
-  // //for filtering out data of afghanistan
-
   locations
   .forEach(location => {
     const coordinates=location.coordinates;
@@ -79,7 +69,6 @@ map.on('click', (event) => {
   }
   const feature = features[0];
 
-  // Code from the next step will go here.
   /* 
     Create a popup, specify its options 
     and properties, and add it to the map.
