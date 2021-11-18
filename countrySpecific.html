@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19 Tracker</title>
+    <!--Font awesome CDN link   -->
+
+    <!-- A content delivery network (CDN) refers to a geographically distributed group of servers which work together to provide fast delivery of Internet content. -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- custom CSS file link -->
+    <link rel="stylesheet" href="css/countrySpecific.css">
+    <!-- geoplugin link -->
+   <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+</head>
+<body>
+
+  <header>
+      <a href="index.html" class="logo">C<img src =".\images\logo1.jpg" width="30px">VID-19</a>
+      <!-- <a href="#" class="logo">C<span ><img src =".\images\logo1.jpg" width="30px"></span>VID-19</a>  -->
+      
+      <nav class="navbar"> 
+        <a  href="index.html">Home</a>
+      <a class ="active" href="#CountrySpecific">Country Specific</a>
+    
+      <a href="#home">India</a>
+      <a href="#home">Vaccination Centers</a>
+      
+    </nav>
+    <div class="container" onclick="myFunction(this)">
+        
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
+  </header>
+  <!-- <br>
+  <br><br> -->
+  <main class="CountrySpecific" id="CountrySpecific">
+    <div class="stats">
+      <div class="latest-report">
+        <div class="country">
+          <div class="name">Loading...</div>
+          <div class="change-country">Change</div>
+          <div class="search-country hide">
+            <div class="search-box">
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Search Country..."
+              />
+              <img class="close-btn" src="./images/close.svg" alt="" />
+            </div>
+            <div class="country-list">
+            </div>
+
+          </div>
+        </div>
+        <div class="total-cases">
+          <div class="title">Total Cases</div>
+          <div class="value">0</div>
+          <div class="new-value">+0</div>
+        </div>
+
+        <div class="recovered">
+          <div class="title">Recovered</div>
+          <div class="value">0</div>
+          <div class="new-value">+0</div>
+        </div>
+        
+        <div class="deaths">
+          <div class="title">Deaths</div>
+          <div class="value">0</div>
+          <div class="new-value">+0</div>
+        </div>
+      </div>
+      <div class="chart">
+        <canvas id="axes_line_chart"></canvas>
+      
+    </div>
+    </div>
+  </main>
+
+
+
+
+
+
+    <!-- chart.js CDN link  -->
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+    integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI="
+    crossorigin="anonymous"
+  ></script>
+    <!-- custom CSS file link -->
+    <!-- <script src="js/countrySpecific.js"></script> -->
+    <script src="js/countries.js"></script>
+   
+</body>
+</html>
