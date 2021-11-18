@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+:root{
+    --blue:#3c6382;
+    --dark-blue: #0a3d62;
+}
+/* The :root CSS pseudo-class matches the root element of a tree representing the document. */
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .3s cubic-bezier(.38,1.15,.7,1.12);
+
+
+}
+::selection{
+    background:var(--blue);
+    color: #fff;
+
+}
+
+body{
+    background:#f9f9f9;
+}
+
+section{
+    min-height: 100vh;
+    padding:0 7%;
+    padding-top: 9rem;
+}
+
+html{
+font-size: 72.5%;
+overflow-x:hidden;
+}
+header{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+position: fixed;
+top:0;left: 0;
+z-index: 1;
+/* The z-index property specifies the stack order of an element.
+An element with greater stack order is always in front of an element with a lower stack order */
+padding: 2rem 2rem 2rem 2rem;
+/* margin-right: 1rem; */
+background: white;
+}
+header .logo{
+  font-size: 2.5rem;
+  color:var(--dark-blue);
+}
+
+header .navbar a{
+font-size: 1.7rem;
+margin: 10px 20px ;
+padding: 0.5rem, 2rem;
+border-radius:0.5rem;
+color: var(--dark-blue);
+align-items: right;
+}
+
+header .navbar a.active,
+header .navbar a:hover{
+ background: var(--blue);
+ color:white;
+ box-shadow:0.5rem 1rem rgba(0,0,0,0.1);
+ /* /* margin-left:5px; */
+ margin-right: 5px; 
+
+}
+.container {
+    
+    cursor: pointer;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 2rem;
+    color:var(--blue);
+
+    /* display: none; */
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color:var(--dark-blue);
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+
+  .hide{
+    display: none;
+} 
+@keyframes fade{ 
+    0%{
+    opacity: 0;
+    }
+ 
+
+    100%{
+        opacity: 1;
+        }
+    
+}
+.fadeIn{
+animation: fade 0.5s ease-in-out;
+
+}
+
+main{
+max-width: 1200px;
+margin: 0 auto;
+}
+.stats{
+width: 100%;
+/* height: 800px; */
+background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)),url(../images/bg.jpg) ;
+background-size: cover;
+}
+.latest-report{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:80%;
+  color:#fff;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+.country,
+.total-cases,
+.recovered,
+.deaths{
+  height: 100px;
+}
+.name{
+  font-size: 2.2em;
+  color: #a523f0;
+  font-weight: bold;
+}
+.change-country{
+cursor:pointer;
+/* font-size: 1.5em; */
+}
+.title{
+font-size: 1.3rem;
+/* font-weight: bolder; */
+}
+.total-cases .value{
+  font-size: 2em;
+  font-weight:bold ;
+
+}
+.recovered .value{
+  font-size: 2em;
+  font-weight:bold ;
+  color: #009688;
+}
+.deaths .value{
+font-size: 2em;
+font-weight: bold;
+color:red;
+}
+
+.new-value{
+  font-size: 1.3rem;
+}
+/* chart */
+.chart{
+width: 80%;
+height: 100vh;
+min-height: 500px;
+margin:  0 auto;
+padding: 50px 0;
+
+/* cursor: pointer; */
+}
+
+/* --------search country----- */
+.search-country{
+  position: relative;
+  top: 10px;
+}
+.search-box{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+  height: 30px;
+  background-color: #111;
+  z-index: 1;
+}
+.search-box input{
+width: 360px;
+height: 25px;
+border: none;
+background-color:transparent;
+color: white;
+padding-left: 15px;
+font-size: 1.1em;
+}
+.search-box img{
+  width: 20px;
+  padding-right: 5px;
+  cursor:pointer;
+}
+
+.country-list{
+  display: flex;
+  position: absolute;
+  top: 30px;
+
+  width: 400px;
+  height: 300px;
+
+  background-color: #111;
+  opacity: 1;
+
+  overflow-y: scroll;
+}
+
+.country-list ul{
+  width: 100%;
+}
+
+.country-list ul li{
+  list-style: none;
+  cursor: pointer;
+  padding: 10px;
+  color: #FFF;
+}
+.country-list ul li:hover{
+  border-left: 1px solid #FFF;
+}
+/* SCROLL BAR */
+.country-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.country-list::-webkit-scrollbar-track {
+  background: #111;
+}
+
+/* Handle */
+.country-list::-webkit-scrollbar-thumb {
+  background: #F1F1F1;
+}
+
+/* Handle on hover */
+.country-list::-webkit-scrollbar-thumb:hover {
+  background: #FFF;
+}
+
+
+
+
+  /* media queries */
+  @media(max-width:1200px){
+    html{
+        font-size:55%;
+        }
+  }
+  @media(max-width:991px){
+   .container{
+       display: block;
+   }
+   header .navbar{
+     position: absolute;
+     top: 100%; left: 0;
+     width: 100%;
+     background: #fff;
+    padding:2rem ;
+    border-top: 0.1rem solid rgba(0,0,0,0.1);
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+
+   }
+   header .navbar a{
+       display: block;
+       margin: 1.5rem 0;
+       font-size: 2rem;
+   }
+   header .navbar.nav-toggle{
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+  }
+
+  /* screen: Used for computer screens, tablets, smart-phones etc. */
+@media screen and (max-width:600px){
+.latest-report{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+
+}
+
