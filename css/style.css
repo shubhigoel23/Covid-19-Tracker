@@ -150,11 +150,15 @@ By default, the image is repeated so it covers the entire element. */
     height: 100vh;
     box-sizing: content-box; 
     padding: 30px;  
-    border: 10px solid blue;
-    
+    border: 10px solid #255f85;
+    /* border: 10px solid #192a51; */
     
 }
-
+/* .mapboxgl-popup{
+    background-color:black;
+    box-sizing: border-box;
+    border-color: white;
+} */
 
   /* media queries */
   @media(max-width:1200px){
