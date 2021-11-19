@@ -134,6 +134,7 @@ width: 100%;
 /* height: 800px; */
 background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)),url(../images/bg.jpg) ;
 background-size: cover;
+margin-top: 15px;
 }
 .latest-report{
   display: flex;
@@ -151,17 +152,18 @@ background-size: cover;
   height: 100px;
 }
 .name{
-  font-size: 2.2em;
+  font-size: 3.2em;
   color: #a523f0;
   font-weight: bold;
 }
 .change-country{
 cursor:pointer;
-/* font-size: 1.5em; */
+font-size: 1.3em;
 }
 .title{
-font-size: 1.3rem;
-/* font-weight: bolder; */
+font-size: 1.6rem;
+color: #F06C9B;
+font-weight: bolder;
 }
 .total-cases .value{
   font-size: 2em;
@@ -318,4 +320,3 @@ font-size: 1.1em;
 
 
 }
-
