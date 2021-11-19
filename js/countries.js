@@ -300,30 +300,32 @@ let app_data = [],
   dates = [];
   formatedDates = [];
 // GET USERS COUNTRY CODE
-// fetch("https://api.ipgeolocation.io/ipgeo?apiKey=14c7928d2aef416287e034ee91cd360d")
-//   .then((res) => {
-//     return res.json();
-//   })
-//   .then((data) => {
-//     let country_code = data.country_code2;
-//     let user_country;
-//     country_list.forEach((country) => {
-//       if (country.code == country_code) {
-//         user_country = country.name;
-//       }
-//     });
-//     fetchData(user_country);
-//   });
-let country; 
-let country_code=geoplugin_countryCode();
-country_list.forEach(countries => {
-    if(countries.code==country_code){
-      country=countries.name;    
-    }   
-   
-});
-console.log(country);
-fetchData(country);
+fetch("https://api.ipgeolocation.io/ipgeo?apiKey=14c7928d2aef416287e034ee91cd360d")
+  .then((res) => {
+    return res.json();
+  })
+  .then((data) => {
+    let country; 
+    let country_code=data.country_code2;
+    console.log(country_code);
+    country_list.forEach(countries => {
+        if(countries.code==country_code){
+          country=countries.name;    
+        }   
+    });
+    console.log(country);
+    fetchData(country);
+
+    // let country_code = data.country_code2;
+    // let user_country;
+    // country_list.forEach((country) => {
+    //   if (country.code == country_code) {
+    //     user_country = country.name;
+    //   }
+    // });
+    // fetchData(user_country);
+  });
+
 function fetchData(country) {
   user_country = country;
   country_name.innerHTML = "Loading...";
