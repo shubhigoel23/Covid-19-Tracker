@@ -481,14 +481,14 @@ function axesLinearChart() {
         yAxes: [{
             ticks: {
                 fontColor: "grey",
-                fontSize: 18
+                fontSize: 14
               
             }
         }],
         xAxes: [{
             ticks: {
                 fontColor: "grey",
-                fontSize: 14
+                fontSize: 13
             }
         }]
     },
