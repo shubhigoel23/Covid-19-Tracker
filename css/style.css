@@ -151,6 +151,7 @@ By default, the image is repeated so it covers the entire element. */
     box-sizing: content-box; 
     padding: 30px;  
     border: 10px solid #255f85;
+    /* background-size: cover; */
     /* border: 10px solid #192a51; */
     
 }
