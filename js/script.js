@@ -56,7 +56,7 @@ fetch("https://coronavirus-tracker-api.herokuapp.com/v2/locations", {
     <h3 style="color:#582C4D;">Province: ${province}</h3>
       <h4>
       <ul style=" list-style-type: none">
-      <li style="color:#aa4465 ">Confirmed: ${confirmed}</li>
+      <li style="color:#CA1655 ">Confirmed: ${confirmed}</li>
       <li style="color:#0B3132 ">Recovered: ${recovered}</li>
       <li style="color:#d00000 ">Deaths: ${deaths}</li>
       </ul></h4>`
