@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19 Tracker</title>
+    <!--Font awesome CDN link   -->
+
+    <!-- A content delivery network (CDN) refers to a geographically distributed group of servers which work together to provide fast delivery of Internet content. -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- custom CSS file link -->
+    <link rel="stylesheet" href="./css/india.css">
+    
+
+
+</head>
+<body>
+
+  <header>
+      <a href="index.html" class="logo">C<img src =".\images\logo1.jpg" width="30px">VID-19</a>
+      <!-- <a href="#" class="logo">C<span ><img src =".\images\logo1.jpg" width="30px"></span>VID-19</a>  -->
+      
+      <nav class="navbar"> 
+        <a  href="index.html">Home</a>
+      <a  href="countrySpecific.html">Country Specific</a>
+    
+      <a class ="active" href="#India">India</a>
+      <a href="#home">Vaccination Centers</a>
+      
+    </nav>
+    <div class="container" onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+
+  </header>
+ 
+  <section class="India" id="India">
+      
+    <div class="stats">
+        <div class="latest-report">
+            <div class="total-cases">
+              <div class="title">Total Cases</div>
+              <div class="value">0</div>
+              
+            </div>
+            <div class="active">
+                <div class="title">Active</div>
+                <div class="value">0</div>
+               
+              </div>
+            <div class="recovered">
+              <div class="title">Recovered</div>
+              <div class="value">0</div>
+             
+            </div>
+            
+            <div class="deaths">
+              <div class="title">Deaths</div>
+              <div class="value">0</div>  
+            </div>
+          </div>
+
+          <!-- <div class="flourish-embed flourish-map" data-src="visualisation/7921513"><script src="https://public.flourish.studio/resources/embed.js"></script></div> -->
+          <div class="last-updated">    Last Updated:  </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>Total Confirmed Cases</th>
+              <th>Active Cases</th>
+              <th>Recovered Cases</th>
+              <th>Deaths Cases</th>
+            </tr>
+          </thead>
+          <tbody id="data">
+          </tbody>
+        </table>
+      </div>
+  </section>
+    <!-- jquery CDN link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+    <!-- custom CSS file link -->
+    <!-- <script src="./js/script.js"></script> -->
+    <script src="./js/india.js"></script>
+ 
+</body>
+</html>
