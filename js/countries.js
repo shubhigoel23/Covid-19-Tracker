@@ -428,7 +428,9 @@ deaths_new_value.innerHTML=`+${new_death_cases.toLocaleString()}`;
 dates.forEach((date) => {
   formatedDates.push(formatDate(date));
 });
-
+const LastUpdated=document.querySelector('.last-updated');
+const LastUpdates= formatedDates[formatedDates.length-1];
+LastUpdated.innerText+= ` ${LastUpdates}`;
 }
 
 // UPDATE CHART
@@ -519,7 +521,7 @@ const monthsNames = [
 
 function formatDate(dateString) {
   let date = new Date(dateString);
-
-  return `${date.getDate()} ${monthsNames[date.getMonth()]}`;
+  date = date.getDate()+'-' +monthsNames[date.getMonth()] +'-'+date.getFullYear();
+  return date;
   // getDate function returns the date from the date and getMonth returns the month number
 }
