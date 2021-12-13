@@ -5,31 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Covid-19 Tracker</title>
+
     <!--Font awesome CDN link   -->
-
-    <!-- A content delivery network (CDN) refers to a geographically distributed group of servers which work together to provide fast delivery of Internet content. -->
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <!-- custom CSS file link -->
     <link rel="stylesheet" href="./css/india.css">
-    
-
-
 </head>
 <body>
-
+  <!-- header begins -->
   <header>
       <a href="index.html" class="logo">C<img src =".\images\logo1.jpg" width="30px">VID-19</a>
-      <!-- <a href="#" class="logo">C<span ><img src =".\images\logo1.jpg" width="30px"></span>VID-19</a>  -->
-      
       <nav class="navbar"> 
-        <a  href="index.html">Home</a>
-      <a  href="countrySpecific.html">Country Specific</a>
-    
-      <a class ="active" href="#India">India</a>
-      <a href="#home">Vaccination Centers</a>
-      
+        <a  href="index.html">&nbspHome&nbsp</a>
+        <a  href="countrySpecific.html">&nbspCountry Specific&nbsp</a>
+        <a class ="activeLink" href="#India">&nbspIndia&nbsp</a>
+        <a href="vaccination.html">&nbspVaccination&nbsp</a>
     </nav>
+
     <div class="container" onclick="myFunction(this)">
         <div class="bar1"></div>
         <div class="bar2"></div>
@@ -37,38 +30,46 @@
       </div>
 
   </header>
- 
-  <section class="India" id="India">
-      
+ <!-- header ends -->
+
+<!-- India section  starts -->
+  <section class="India" id="India">    
     <div class="stats">
         <div class="latest-report">
+
             <div class="total-cases">
               <div class="title">Total Cases</div>
               <div class="value">0</div>
-              
             </div>
+
             <div class="active">
                 <div class="title">Active</div>
                 <div class="value">0</div>
-               
               </div>
+
             <div class="recovered">
               <div class="title">Recovered</div>
               <div class="value">0</div>
-             
-            </div>
+          </div>
             
             <div class="deaths">
               <div class="title">Deaths</div>
               <div class="value">0</div>  
             </div>
-          </div>
 
-          <!-- <div class="flourish-embed flourish-map" data-src="visualisation/7921513"><script src="https://public.flourish.studio/resources/embed.js"></script></div> -->
+        </div>
+
+        <!--  state wise Cases in tabular format -->
           <div class="last-updated">    Last Updated:  </div>
+
+          <div class="alert">
+            <img src="./images/notifications_black_24dp.svg" alt="alert" style="margin-top:3px;">
+            All the data that has been provided on this website is subject to API risk's.
+          </div>
+        
         <table class="table">
           <thead>
-            <tr>
+            <tr style="border-collapse: collapse;">
               <th>State</th>
               <th>Total Confirmed Cases</th>
               <th>Active Cases</th>
@@ -79,13 +80,67 @@
           <tbody id="data">
           </tbody>
         </table>
+  
       </div>
   </section>
-    <!-- jquery CDN link  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
-    <!-- custom CSS file link -->
-    <!-- <script src="./js/script.js"></script> -->
-    <script src="./js/india.js"></script>
- 
+<!-- India section  ends -->
+
+<!-- footer section starts  -->
+<div class="footer">
+  <div class="box-container">
+
+      <div class="box">
+          <h3>about us</h3>
+          <p style="margin-right:40px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate minima soluta distinctio eaque magni veritatis dicta dolore dignissimos totam quis!</p>
+      </div>
+
+      <div class="box quick_links">
+          <h3>quick links</h3>
+          <a href="index.html">Home</a>
+          <a href="countrySpecific.html">Country Specific</a>
+          <a href="#">India</a>
+          <a href="vaccination.html">Vaccination </a> 
+          <a href="index.html#prevention">Prevention</a>
+          <a href="index.html#symptoms"> Symptoms</a>
+          <a href="index.html#precautions">Precautions</a>
+          <a href="index.html#doctor">doctor</a>
+          <a href="index.html#hand-wash">hand-wash</a>
+      </div>
+
+      <div class="box">
+          <h3>locations</h3>
+          <a >india</a>
+          <a >USA</a>
+          <a >france</a>
+          <a >russia</a>
+          <a >japan</a>
+      </div>
+
+      <div class="box">
+          <h3>follow us</h3>
+          <a>facebook</a>
+          <a>twitter</a>
+          <a>instagram</a>
+          <a>linkedin</a>
+          <a>youtube</a>
+      </div>
+
+  </div>
+
+  <h1 class="credit"> created by <a href="https://www.linkedin.com/in/shubhi-goel-613b26139/">Shubhi Goel</a> &copy; copyright @ 2021 </h1>
+</div>
+<!-- footer section ends -->
+
+<!-- scroll top  -->
+<a href="#" class="scroll-top">
+  <img src="images/scroll-img.png" alt="">
+</a>
+
+<!-- jquery CDN link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+
+<!-- js file link -->
+<script src="./js/india.js"></script>
+
 </body>
 </html>
