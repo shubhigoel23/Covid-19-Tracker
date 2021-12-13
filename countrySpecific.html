@@ -22,11 +22,11 @@
       <!-- <a href="#" class="logo">C<span ><img src =".\images\logo1.jpg" width="30px"></span>VID-19</a>  -->
       
       <nav class="navbar"> 
-        <a  href="index.html">Home</a>
-      <a class ="active" href="#CountrySpecific">Country Specific</a>
+        <a  href="index.html">&nbspHome&nbsp</a>
+      <a class ="active" href="#CountrySpecific">&nbspCountry Specific&nbsp</a>
     
-      <a href="india.html">India</a>
-      <a href="#home">Vaccination Centers</a>
+      <a href="india.html">&nbspIndia&nbsp</a>
+      <a href="vaccination.html">&nbspVaccination&nbsp </a>
       
     </nav>
     <div class="container" onclick="myFunction(this)">
@@ -39,8 +39,13 @@
   </header>
   <!-- <br>
   <br><br> -->
+  
   <main class="CountrySpecific" id="CountrySpecific">
+    <div class="last-updated">    Last Updated:  </div>
+    <div class="alert"><img src="./images/notifications_black_24dp.svg" alt="alert" style="margin-top:3px;">
+      All the data that has been provided on this website is subject to API risk's. </div>
     <div class="stats">
+      
       <div class="latest-report">
         <div class="country">
           <div class="name">Loading...</div>
@@ -83,12 +88,74 @@
     </div>
     </div>
   </main>
+  <div id="twitter-widget-holder">
+
+<a class="twitter-timeline" data-lang="en" data-width="300" data-height="400" data-dnt="true" data-theme="light" data-chrome="nofooter"
+data-tweet-limit="indefinte" href="https://twitter.com/MoHFW_INDIA?ref_src=twsrc%5Etfw">Tweets by MoHFW_INDIA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+
+<!-- footer section starts  -->
+
+<div class="footer">
+
+  <div class="box-container">
+
+      <div class="box">
+          <h3>about us</h3>
+          <p style="margin-right:40px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate minima soluta distinctio eaque magni veritatis dicta dolore dignissimos totam quis!</p>
+      </div>
+
+     
+
+      <div class="box quick_links">
+          <h3>quick links</h3>
+          <a href="index.html">Home</a>
+      <a href="#">Country Specific</a>
+      <a href="india.html">India</a>
+      <a href="vaccination.html">Vaccination </a> 
+      <a href="index.html#prevention">Prevention</a>
+      <a href="index.html#symptoms"> Symptoms</a>
+      <a href="index.html#precautions">Precautions</a>
+      <a href="index.html#doctor">doctor</a>
+      <a href="index.html#hand-wash">hand-wash</a>
+      </div>
+ <div class="box">
+          <h3>locations</h3>
+          <a >india</a>
+          <a >USA</a>
+          <a >france</a>
+          <a >russia</a>
+          <a >japan</a>
+      </div>
+      <div class="box">
+          <h3>follow us</h3>
+          <a>facebook</a>
+          <a>twitter</a>
+          <a>instagram</a>
+          <a>linkedin</a>
+          <a>youtube</a>
+      </div>
+
+  </div>
+
+  <h1 class="credit"> created by <a href="https://www.linkedin.com/in/shubhi-goel-613b26139/">Shubhi Goel</a> &copy; copyright @ 2021 </h1>
+
+</div>
+
+<!-- footer section ends -->
+
+<!-- scroll top  -->
+
+<a href="#" class="scroll-top">
+  <img src="images/scroll-img.png" alt="">
+</a>
 
 
 
 
-
-
+<!-- jquery CDN link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
     <!-- chart.js CDN link  -->
     <script
     src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
@@ -96,7 +163,6 @@
     crossorigin="anonymous"
   ></script>
     <!-- custom CSS file link -->
-    <!-- <script src="js/countrySpecific.js"></script> -->
     <script src="js/countries.js"></script>
    
 </body>
