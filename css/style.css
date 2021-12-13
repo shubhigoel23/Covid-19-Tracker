@@ -4,6 +4,7 @@
     --dark-blue: #0a3d62;
 }
 /* The :root CSS pseudo-class matches the root element of a tree representing the document. */
+
 *{
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -14,9 +15,8 @@
     border: none;
     text-transform: capitalize;
     transition: all .3s cubic-bezier(.38,1.15,.7,1.12);
-
-
 }
+
 ::selection{
     background:var(--blue);
     color: #fff;
@@ -29,14 +29,15 @@ body{
 
 section{
     min-height: 100vh;
-    padding:0 7%;
-    padding-top: 9rem;
+    padding:0rem 3%;
 }
 
 html{
 font-size: 72.5%;
 overflow-x:hidden;
 }
+
+/* header  */
 header{
 width: 100%;
 display: flex;
@@ -48,23 +49,20 @@ z-index: 1;
 /* The z-index property specifies the stack order of an element.
 An element with greater stack order is always in front of an element with a lower stack order */
 padding: 2rem 2rem 2rem 2rem;
-/* margin-right: 1rem; */
 background: white;
+border-bottom: .1rem solid rgba(0,0,0,.1);
+box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
 }
+
 header .logo{
   font-size: 2.5rem;
   color:var(--dark-blue);
 }
-/* header.logo img{
-color: var(--dark-blue);
-} */
-/* header.logo span{
-color: var(--dark-blue);
-} */
+
 header .navbar a{
-font-size: 1.7rem;
-margin: 10px 20px ;
-padding: 0.5rem, 2rem;
+font-size: 1.62rem;
+margin: 10px 10px ;
+padding: 0.5rem, 1rem;
 border-radius:0.5rem;
 color: var(--dark-blue);
 align-items: right;
@@ -75,22 +73,19 @@ header .navbar a:hover{
  background: var(--blue);
  color:white;
  box-shadow:0.5rem 1rem rgba(0,0,0,0.1);
- /* /* margin-left:5px; */
- margin-right: 5px; 
-
+ margin-right: 4px; 
 }
+
 .container {
-    
     cursor: pointer;
     display: inline-block;
     cursor: pointer;
     font-size: 2rem;
     color:var(--blue);
-
-    /* display: none; */
+    display: none;
   }
   
-  .bar1, .bar2, .bar3 {
+.bar1, .bar2, .bar3 {
     width: 35px;
     height: 5px;
     background-color:var(--dark-blue);
@@ -98,36 +93,31 @@ header .navbar a:hover{
     transition: 0.4s;
   }
   
-  .change .bar1 {
+.change .bar1 {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
     transform: rotate(-45deg) translate(-9px, 6px);
   }
   
-  .change .bar2 {opacity: 0;}
+.change .bar2 {opacity: 0;}
   
-  .change .bar3 {
+.change .bar3 {
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
   }
-.home{
-    background:url(..\images\do-img.png) no-repeat;
-    /* The background-image property specifies an image to use as the background of an element.
-By default, the image is repeated so it covers the entire element. */
-/* By default, the background-image property repeats an image both horizontally and vertically. */
-    background-size:contain;
-    /* cover:Resize the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges */
-    background-position: center;
-    /* The background-position property sets the starting position of a background image. */
+.hide{
+    display: none;
 }
+
+/* Home section */
 .home .content {
     text-align: center;
-    /* padding-top: 3rem;
-    video */
+    padding-top: 8rem;
+    
 }
 .home .content h1{
     font-style: italic;
-    font-size: 5rem;
-    font-weight: bold;
+    font-size: 4rem;
+    font-weight: bolder;
 }
 .home .content .btn{
     display: inline-block;
@@ -144,6 +134,34 @@ By default, the image is repeated so it covers the entire element. */
     background:var(--dark-blue);
 }
 
+/* Worldwide spread stats section */
+.last-updated{
+    margin-left: 10px;
+    font-weight: bold;
+    font-size:1.4rem;
+
+}
+
+.alert{
+    font-weight: bold;
+    font-size:1.4rem;
+    width:fit-content;
+    background-color: red;
+    position: relative;
+    animation-name:alertMessage;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+      margin-bottom: 5px;
+}
+
+@keyframes alertMessage {
+  0%   {background-color:red; left:0vw; top:0px;}
+  100%  {background-color:yellow; left:50vw; top:0px;}
+}
+
 #map{
    
     width: 93vw;
@@ -151,47 +169,439 @@ By default, the image is repeated so it covers the entire element. */
     box-sizing: content-box; 
     padding: 30px;  
     border: 10px solid #255f85;
-    /* background-size: cover; */
-    /* border: 10px solid #192a51; */
+}
+
+.mapboxgl-marker{
+    cursor: pointer;
+}
+
+/* styling of all heading's  */
+.heading{
+    text-align: center;
+    color:#e5383b;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-decoration:underline;
+    font-weight: bolder;
+    padding:3rem;
+}
+
+/* prevention section */
+.prevention .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top:2rem;
+}
+
+.prevention .box-container .box{
+    flex:1 1 30rem;
+    border-radius: .5rem;
+    margin:1rem;
+    padding:1rem;
+    text-align: center;
+}
+
+.prevention .box-container .box img{
+    height:12rem;
+    padding:1rem;
+}
+
+.prevention .box-container .box h3{
+    color: #ff6d00;
+    font-size: 1.5rem;
+}
+
+.prevention .box-container .box p{
+    color:var(--dark-blue);
+    font-size: 1.2rem;
+    padding:1rem;
+}
+
+.prevention .box-container .box:hover{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+/* symptoms section */
+.symptoms{
+    background:url(../images/background-img.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.symptoms .column{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.symptoms .column .main-image img{
+    width: 43vh;
+}
+
+.symptoms .column .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     
 }
-/* .mapboxgl-popup{
-    background-color:black;
-    box-sizing: border-box;
-    border-color: white;
-} */
 
-  /* media queries */
-  @media(max-width:1200px){
+.symptoms .column .box-container .box{
+    margin:1rem;
+    text-align: center;
+}
+
+.symptoms .column .box-container .box img{
+    width:20rem;
+    padding:1rem;
+}
+
+.symptoms .column .box-container .box h3{
+    font-size: 1.5rem;
+    color: #006466;
+}
+
+/* precaution's section */
+.precautions .column{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.precautions .column .box-container{
+    margin:2rem;
+    flex:1 1 50rem;
+    border:.1rem solid rgba(0,0,0,.1);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    border-radius: .5rem;
+    
+}
+
+.precautions .column .box-container .title{
+    padding:1.5rem .5rem;
+    text-align: center;
+    font-size: 2rem;
+    background: #90be6d;
+    color:#fff;
+}
+
+.precautions .column .box-container:last-child .title{
+    background:#f3722c;
+}
+
+.precautions .column .box-container .box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:1rem;
+}
+
+.precautions .column .box-container .box img{
+    width:15rem;
+    padding:1rem;
+}
+
+.precautions .column .box-container .box h3{
+    font-size: 1.5rem;
+    color: #35846C; 
+}
+
+.precautions .column .box-container .box p{
+    font-size: 1.2rem;
+    color: #577590;
+    padding:1rem 0;
+    font-weight: bold;
+}
+
+/* doctor's section */
+.doctor{
+    background:url(../images/background-img.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.doctor .box-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.doctor .box-container .box{
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    padding:1rem;
+    margin:1.5rem;
+    text-align: center;
+    background:#fff;
+    border:.1rem solid rgba(0,0,0,.1);
+    width:33rem;
+}
+
+.doctor .box-container .box img{
+    margin:1rem;
+    border-radius: 50%;
+    height:15rem;
+    width:15rem;
+    object-fit: cover;
+    background: #118ab2;
+}
+
+.doctor .box-container .box h3{
+    font-size: 1.8rem;
+    color: #197278;
+    font-weight: bolder;
+}
+
+.doctor .box-container .box span{
+    font-size: 1.4rem;
+      color: #ff595e;
+      font-weight: bold;
+}
+
+.doctor .box-container .box .share{
+    border-top: .1rem solid rgba(0,0,0,.1);
+    padding:1rem;
+    margin-top: 1rem;
+}
+
+.doctor .box-container .box .share a{
+    border-radius: 50%;
+    height: 4.5rem;
+    width:4.5rem;
+    line-height: 4.5rem;
+    font-size: 2rem;
+    margin: .4rem;
+    background:#eee;
+    color:var(--blue);
+    
+}
+
+.doctor .box-container .box .share a:hover{
+    background:var(--blue);
+    color:#fff;
+    transform: rotate(360deg);
+}
+
+/* hand wash section */
+.hand-wash .column{
+    display: flex;
+    justify-content: center;
+}
+
+.hand-wash .column .main-image img{
+    width:25vw;
+}
+
+.hand-wash .column .box-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hand-wash .column .box-container .box{
+    text-align: center;
+    margin:2rem;
+}
+
+.hand-wash .column .box-container .box img{
+    width: 14rem;
+    height: 14rem;
+    padding:1rem;
+}
+
+.hand-wash .column .box-container .box h3{
+    font-size: 1.5rem;
+     color: #495057;
+     font-weight: bolder;
+}
+
+/* footer section */
+.footer{
+    border-top: .1rem solid rgba(0,0,0,.1);
+    background:url(../images/background-img.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color:var(--dark-blue);
+}
+
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer .box-container .box{
+    flex:1 1 20rem;
+    margin:1rem;
+    border-right: .1rem solid rgba(248, 245, 245, 0.1);
+}
+
+.footer .box-container .box h3{
+    font-size: 2rem;
+    color: wheat;
+    padding:1rem 0;
+}
+
+.footer .box-container .box p{
+    font-size: 1.3rem;
+    color: white;
+    padding:.5rem 0;
+}
+
+.footer .box-container .box a{
+    font-size: 1.3rem;
+    color: white;
+    padding:.5rem 0;
+   display: block;
+    cursor: pointer;
+}
+.footer .box-container .quick_links a {
+  display:inline-table;
+  align-items:left;
+  width: 150px;
+  height: 30px;
+  justify-content:space-between;
+}
+
+.footer a:hover{
+    text-decoration: underline;
+}
+
+.footer .credit{
+    font-size: 1.7rem;
+    font-weight: normal;
+    text-align: center;
+    border-top: .1rem solid rgba(248, 245, 245, 0.1);
+    padding:2.5rem 1rem;
+    color: white;
+}
+
+.footer .credit a{
+    color:wheat;
+}
+
+/* scroll top  */
+.scroll-top{
+    position: fixed;
+    bottom:5rem; right:1.5rem;
+    z-index: 1000;
+}
+
+.scroll-top img{
+    width:8rem;
+    animation: float 3s linear infinite;
+}
+
+@keyframes float{
+    100%, 0%{
+        transform: translateY(0rem);
+    }
+    50%{
+        transform: translateY(-3rem);
+    }
+}
+
+
+/* media queries */
+@media(max-width:1200px){
+
     html{
         font-size:55%;
         }
+
   }
   @media(max-width:991px){
-   .container{
-       display: block;
-   }
-   header .navbar{
-     position: absolute;
-     top: 100%; left: 0;
-     width: 100%;
-     background: #fff;
+
+.container{
+    display: block;
+}
+
+header .navbar{
+    position: absolute;
+    top: 100%; left: 0;
+    width: 100%;
+    background: #fff;
     padding:2rem ;
     border-top: 0.1rem solid rgba(0,0,0,0.1);
     transform-origin: top;
     transform: scaleY(0);
     opacity: 0;
-
-   }
-   header .navbar a{
-       display: block;
-       margin: 1.5rem 0;
-       font-size: 2rem;
-   }
-   header .navbar.nav-toggle{
-    transform: scaleY(1);
-    opacity: 1;
 }
 
-  }
+header .navbar a{
+    display: block;
+    margin: 1.5rem 0;
+    font-size: 2rem;
+}
 
+header .navbar.nav-toggle{
+    transform: scaleY(1);
+    opacity: 1;   
+}
+
+.heading{
+    padding:3.5rem;
+}
+
+.symptoms .column .main-image img{
+    display: none;
+}
+
+.hand-wash .column .main-image img{
+    display: none;
+}
+
+}
+
+@media(max-width:700px){
+.last-updated{
+        margin-top:0;
+        font-size: 1.6rem;
+    }
+
+.alert{
+    animation-duration: 3s;
+}
+
+@keyframes alertMessage {
+0%   {background-color:red; left:3rem; top:0px;}
+100%  {background-color:yellow; left:20rem; top:0px;}
+}
+
+}
+
+@media (max-width:600px){
+
+    .alert{
+    animation-duration: 1s;
+}
+
+@keyframes alertMessage {
+0%   {background-color:red; left:3rem; top:0px;}
+100%  {background-color:yellow;margin-right: 10px; left:5rem; top:0px;}
+    }
+    
+}
+
+/* screen: Used for computer screens, tablets, smart-phones etc. */
+@media screen and  (max-width:450px){
+
+    .symptoms .column .box-container .box img{
+        width:14rem;
+    }
+
+    .precautions .column .box-container .box{
+        flex-flow: column;
+        text-align: center;
+    }
+
+    .doctor .box-container .box{
+        width:100%;
+    }
+}
