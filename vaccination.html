@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19 Tracker</title>
+
+    <!--Font awesome CDN link   -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom CSS file link -->
+    <link rel="stylesheet" href="./css/vaccination.css">
+
+</head>
+
+<body>
+  <!-- header section begins -->
+  <header>
+      <a href="index.html" class="logo">C<img src =".\images\logo1.jpg" width="30px">VID-19</a>
+      <nav class="navbar"> 
+        <a  href="index.html">&nbspHome&nbsp</a>
+        <a href="countrySpecific.html">&nbspCountry Specific&nbsp</a>
+        <a href="india.html">&nbspIndia&nbsp</a>
+        <a class ="active" href="#Vaccination">&nbspVaccination&nbsp</a>
+      </nav>
+
+    <div class="container" onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+  </header>
+  <!-- header section ends -->
+
+  <!-- Vaccination section begins -->
+  <section class="Vaccination" id="Vaccination">
+      <div>
+
+        <div class="content1">
+            <h1 >Don't let Covid-19 give you sleepless nights!</h1>
+            <a href="#SlotAvailability" class="btn">Slot availability</a> 
+        </div>
+      
+        <img class="vaccinationIMG"src="./images/vaccine-animate.svg" alt="Vaccination Image">
+
+      </div>
+
+    <!-- Slot Availability -->
+    <div id="SlotAvailability">
+        <h1 class="SlotAvailabilityContent1" >Search Your Nearest Vaccination Center
+        </h1>
+        <h3 class="SlotAvailabilityContent2" > Get a preview list of the nearest centers and check availability of vaccination slots of next 7 days.</h3>
+
+    <!-- Rounded switch -->
+    <div class="search">
+        <!-- &nbsp is for adding extra spacebar's in html content -->
+        <span style="color: #395D7F;"> By Pin  &nbsp  &nbsp</span>
+        <span>
+          <label class="switch">
+            <input type="checkbox" id="togBtn" value="true"  checked>
+            <span class="slider round"></span>
+          </label>
+        </span> 
+        <span style="color:#ae2012 ;"> &nbsp &nbsp By District</span>
+    </div>
+
+    <!-- search by District -->
+    <div class="searchByDistrictForm">
+      <!-- input state -->
+      <h1 class="State">State : &nbsp &nbsp &nbsp
+        <input
+          type="text"
+          id="search-State"
+          placeholder="Enter State"/>
+      </h1>
+      <!-- input District -->
+      <h1 class="District">District : &nbsp 
+        <input
+          type="text"
+          id="search-district"
+          placeholder="Enter district"/>
+      </h1>
+      <!-- input Date -->
+      <h1>Date : &nbsp &nbsp &nbsp
+        <input
+          type="date"
+          id="date"
+          placeholder="Enter  Date"/>
+      </h1>    
+      <!-- search button -->
+      <button class="searchButton1" onclick="StateAndDistrict()">Search</button>
+
+    </div>
+
+    <!-- search by PIN -->
+    <div class="searchByPinForm hide">
+      <!-- input pincode -->
+      <h1 class="Pin">PIN: &nbsp &nbsp &nbsp
+        <input
+            type="number"
+            id="search-pin"
+            placeholder="Enter PIN"/>
+      </h1>
+      <!-- input date-->
+      <h1>Date: &nbsp
+        <input
+            type="date"
+            id="date2"
+            placeholder="Enter  Date"/>
+      </h1>    
+      <!-- search button -->
+      <button class="searchButton2"onclick="ByPin()">Search</button>
+    </div>
+
+    <!-- error message -->
+    <div class="errorMessage hide">
+      <h1>Wrong input!! Please check your inputs again OR check your internet connection.</h1>
+    </div>
+
+    <!-- tabular data -->
+    <table class="tabularData hide">
+
+      <!-- alert message -->
+      <div class="alert"><img src="./images/notifications_black_24dp.svg" alt="alert" style="margin-top:3px;">
+      The data provided on this website is subject to API risk's.
+      </div>
+
+      <thead>
+          <tr style="border-collapse: collapse;">
+            <th>Name</th>
+            <th>Address</th>
+            <th>Date</th>
+            <th>Vaccine</th>
+            <th>Fees</th>
+            <th>Dose 1</th>
+            <th>Dose 2</th>
+            <th>Min Age</th>
+            <th>Max Age</th>
+          </tr>
+      </thead>
+
+      <tbody id="data">
+      </tbody>
+    
+    </table> 
+    </div>
+  </section>
+  <!-- Vaccination section ends -->
+
+  <!-- footer section starts  -->
+  <div class="footer">
+    <div class="box-container">
+
+        <div class="box">
+            <h3>about us</h3>
+            <p style="margin-right:40px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate minima soluta distinctio eaque magni veritatis dicta dolore dignissimos totam quis!</p>
+        </div>
+
+        <div class="box quick_links">
+            <h3>quick links</h3>
+            <a href="index.html">Home</a>
+            <a href="countrySpecific.html">Country Specific</a>
+            <a href="india.html">India</a>
+            <a href="#">Vaccination </a> 
+            <a href="index.html#prevention">Prevention</a>
+            <a href="index.html#symptoms"> Symptoms</a>
+            <a href="index.html#precautions">Precautions</a>
+            <a href="index.html#doctor">doctor</a>
+            <a href="index.html#hand-wash">hand-wash</a>
+        </div>
+
+        <div class="box">
+                  <h3>locations</h3>
+                  <a >india</a>
+                  <a >USA</a>
+                  <a >france</a>
+                  <a >russia</a>
+                  <a >japan</a>
+              </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a>facebook</a>
+            <a>twitter</a>
+            <a>instagram</a>
+            <a>linkedin</a>
+            <a>youtube</a>
+        </div>
+    </div>
+
+    <h1 class="credit"> created by <a href="https://www.linkedin.com/in/shubhi-goel-613b26139/">Shubhi Goel</a> &copy; copyright @ 2021 </h1>
+  </div>
+  <!-- footer section ends -->
+
+  <!-- scroll top  -->
+  <a href="#" class="scroll-top">
+    <img src="images/scroll-img.png" alt="">
+  </a>
+
+  <!-- jquery CDN link  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+  <!-- custom CSS file link -->
+  <script src="./js/vaccination.js"></script>
+
+</body>
+</html>
