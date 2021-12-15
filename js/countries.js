@@ -3,8 +3,7 @@ function myFunction(x) {
   $('.navbar').toggleClass('nav-toggle');
 }
 
-
-// ALL COUNTRY NAMES WITH THEIR ISO CODE
+// all country names with thier ISO codes
 let country_list = [
     { name: 'USA', code: 'US' },
     { name: 'Spain', code: 'ES' },
@@ -218,61 +217,66 @@ const search_input=document.getElementById("search-input");
 const close_btn=document.querySelector(".close-btn");
 const country_list_element=document.querySelector(".country-list");
 
-
 // Creating a country list
 function createCountryList(){
   const num_of_countries=country_list.length;
-  // console.log(country_list.length);
   let i=0, ul_list_id;
   country_list.forEach( (country,index) => {
-     if(index % Math.ceil(num_of_countries/num_of_ul_lists)==0){
-         ul_list_id=`list-${i}`;
-         country_list_element.innerHTML +=`<ul id="${ul_list_id}"></ul>`;
-         i++;
-     }
+    // inside the country list each country has it's index assigned to it (starting from zero).
+    // (0%math.ceil(203/3))==0 ) means that 203/3=67.66 so  1st 68 countries get added inside ul_list1 and then next 68 inside the 2nd list and so on.
+    if(index % Math.ceil(num_of_countries/num_of_ul_lists)==0){
+        ul_list_id=`list-${i}`;
+        country_list_element.innerHTML +=`<ul id="${ul_list_id}"></ul>`;
+        i++;
+    }
+    // when we click on any country's name from the list, the data is fetched from the api corresponding to that country.
     document.getElementById(`${ul_list_id}`).innerHTML +=`<li onclick="fetchData('${country.name}')" id ="${country.name}">
     ${country.name}
     </li>`;
-  
   })
   }
 let num_of_ul_lists=3;
 createCountryList();
 
-
 //SHOW/HIDE THE COUNTRY LIST ON CLICK EVENT
 change_country_btn.addEventListener("click",function(){
-search_input.value="";
-reset_country_list();
-search_country_element.classList.toggle("hide");
-//toggle method checks if hide was there in the class list of search_country_element. if it's there, then it  removes it from there and if it was not there, then it add's it in the class list.
-search_country_element.classList.add("fadeIn");
-// adding animations
+  search_input.value="";
+  reset_country_list();
+  search_country_element.classList.toggle("hide");
+  //toggle method checks if hide was there in the class list of search_country_element. if it's there, then it  removes it from there and if it was not there, then it add's it in the class list.
+  search_country_element.classList.add("fadeIn");
+  // adding animations
 })
+
 //when we click on close button, the country list disappears
 close_btn.addEventListener("click",function(){
   search_country_element.classList.toggle("hide");
 })
+
 //when we click on any country name, the country list disappears
 country_list_element.addEventListener("click",function(){
   search_country_element.classList.toggle("hide");
 })
 
-
 //Country Filter
 search_input.addEventListener("input",function(){
   let input_value=search_input.value.toUpperCase();
-  //input_value conatins the input characters all in uppercase
+  //input_value contains the input characters all in uppercase
+
   country_list.forEach(country=> {
-    // checks if the country's name starts with the input value, if yes then the hide class is removed and makes the country's with same starting visible else invisible.
-    if(country.name.toUpperCase().startsWith(input_value)){
+
+  // checks if the country's name starts with the input value, if yes then the hide class is removed and makes the country's with same starting alphabet visible else invisible.
+  if(country.name.toUpperCase().startsWith(input_value)){
     document.getElementById(country.name).classList.remove("hide");
     }
-    else{
+
+  else{
     document.getElementById(country.name).classList.add("hide");
     }
   })
+
 })
+
 // Reset's country list after every click on change button
 function reset_country_list(){
   country_list.forEach(country=> {
@@ -280,8 +284,7 @@ function reset_country_list(){
   }
 )}
 
-
-
+// country specific stats
 const country_name= document.querySelector(".country .name");
 const total_cases_old_value= document.querySelector(".total-cases .value");
 const total_cases_new_value= document.querySelector(".total-cases .new-value");
@@ -290,8 +293,6 @@ const recovered_new_value= document.querySelector(".recovered .new-value");
 const deaths_old_value= document.querySelector(".deaths .value");
 const deaths_new_value= document.querySelector(".deaths .new-value");
 
-const ctx = document.getElementById("axes_line_chart").getContext("2d");
-
 // APP VARIABLES
 let app_data = [],
   cases_list = [],
@@ -299,7 +300,8 @@ let app_data = [],
   deaths_list = [],
   dates = [];
   formatedDates = [];
-// GET USERS COUNTRY CODE
+
+// GET USERS COUNTRY CODE USING IP ADDRESS.
 fetch("https://api.ipgeolocation.io/ipgeo?apiKey=14c7928d2aef416287e034ee91cd360d")
   .then((res) => {
     return res.json();
@@ -315,21 +317,12 @@ fetch("https://api.ipgeolocation.io/ipgeo?apiKey=14c7928d2aef416287e034ee91cd360
     });
     console.log(country);
     fetchData(country);
-
-    // let country_code = data.country_code2;
-    // let user_country;
-    // country_list.forEach((country) => {
-    //   if (country.code == country_code) {
-    //     user_country = country.name;
-    //   }
-    // });
-    // fetchData(user_country);
   });
 
+// fetchs Data for particular country 
 function fetchData(country) {
   user_country = country;
   country_name.innerHTML = "Loading...";
-
   (cases_list = []),
     (recovered_list = []),
     (deaths_list = []),
@@ -340,106 +333,111 @@ function fetchData(country) {
     method: "GET",
     redirect: "follow",
   };
-// Async and Await:
-// async and await make promises easier to write".async makes a function return a Promise.await makes a function wait for a Promise
+
+  // Async and Await:
+  // async and await make promises easier to write".async makes a function return a Promise.await makes a function wait for a Promise
   const api_fetch = async (country) => {
+
+    // fetch's confirmed cases of the country
     await fetch(
-      "https://api.covid19api.com/total/country/" + country + "/status/confirmed",
-      requestOptions
-    )
-      .then((res) => {
+      "https://api.covid19api.com/total/country/" + country + "/status/confirmed",requestOptions)
+    .then((res) => {
         return res.json();
       })
-      .then((data) => {
-        data.forEach((entry) => {
-          dates.push(entry.Date);
-         formatDate(dates);
-          cases_list.push(entry.Cases);
-        });
-        console.log("cases_list: ");
-        console.log(cases_list);
+    .then((data) => {
+
+      // the data of every date with confirmed cases for each entry is pushed in the list.
+      data.forEach((entry) => {
+        dates.push(entry.Date);
+        formatDate(dates);
+        cases_list.push(entry.Cases);
       });
+      console.log("cases_list: ");
+      console.log(cases_list);
+
+    });
      
-
+    // fetch's recovered cases of the country
     await fetch(
-      "https://api.covid19api.com/total/country/" + country + "/status/recovered",
-      requestOptions
-    )
-      .then((res) => {
+      "https://api.covid19api.com/total/country/" + country + "/status/recovered", requestOptions)
+    .then((res) => {
         return res.json();
-      })
-      .then((data) => {
-        data.forEach((entry) => {
-          recovered_list.push(entry.Cases);
-          formatDate(dates);
-        });
-        console.log("recovered_list: ");
-        console.log(recovered_list);
+    })
+    .then((data) => {
+      // the data of every date with recovered cases for each entry is pushed in the list.
+      data.forEach((entry) => {
+        recovered_list.push(entry.Cases);
+        formatDate(dates);
       });
-
+      console.log("recovered_list: ");
+      console.log(recovered_list);
+    });
+    
+    // fetch's deaths cases of the country
     await fetch(
-      "https://api.covid19api.com/total/country/" + country + "/status/deaths",
-      requestOptions
-    )
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        data.forEach((entry) => {
-          deaths_list.push(entry.Cases);
-          formatDate(dates);
-        });
-        console.log("deaths_list: ");
-        console.log(deaths_list);
-      });
+      "https://api.covid19api.com/total/country/" + country + "/status/deaths", requestOptions)
 
+    .then((res) => {
+        return res.json();
+    })
+    .then((data) => {
+      // the data of every date with deaths for each entry is pushed in the list.
+      data.forEach((entry) => {
+        deaths_list.push(entry.Cases);
+        formatDate(dates);
+      });
+      console.log("deaths_list: ");
+      console.log(deaths_list);
+    });
     updateUI();
   };
-
   api_fetch(country);
 }
 
- function updateUI(){
+// update's UI after every search
+function updateUI(){
   updateStats();
   axesLinearChart();
- }
-function  updateStats(){
-const total_cases= cases_list[cases_list.length-1];
-//-1 because the starting index is 0 and therefore the last index will be total length of the list -1.
-const new_total_cases= total_cases-(cases_list[cases_list.length-2]);
-
-const recovered_cases= recovered_list[recovered_list.length-1];
-const new_recovered_cases= recovered_cases-(recovered_list[recovered_list.length-2]);
-
-const death_cases= deaths_list[deaths_list.length-1];
-const new_death_cases=death_cases-(deaths_list[deaths_list.length-2]);
-
-// replacing the elements with the actual updated values inside the html.
-country_name.innerHTML=user_country;
-total_cases_old_value.innerHTML=total_cases.toLocaleString();
-//toLocaleString() method :converts a number to comma separated format javascript
-total_cases_new_value.innerHTML=`+${new_total_cases.toLocaleString()}`;
-recovered_old_value.innerHTML=recovered_cases.toLocaleString();
-recovered_new_value.innerHTML=`+${new_recovered_cases.toLocaleString()}`;
-deaths_old_value.innerHTML=death_cases.toLocaleString();
-deaths_new_value.innerHTML=`+${new_death_cases.toLocaleString()}`;
-
-// format dates
-dates.forEach((date) => {
-  formatedDates.push(formatDate(date));
-});
-const LastUpdated=document.querySelector('.last-updated');
-const LastUpdates= formatedDates[formatedDates.length-1];
-LastUpdated.innerText+= ` ${LastUpdates}`;
 }
 
+function  updateStats(){
+  const total_cases= cases_list[cases_list.length-1];
+  //-1 because the starting index is 0 and therefore the last index will be total length of the list -1.
+  const new_total_cases= total_cases-(cases_list[cases_list.length-2]);
+
+  const recovered_cases= recovered_list[recovered_list.length-1];
+  const new_recovered_cases= recovered_cases-(recovered_list[recovered_list.length-2]);
+
+  const death_cases= deaths_list[deaths_list.length-1];
+  const new_death_cases=death_cases-(deaths_list[deaths_list.length-2]);
+
+  // replacing the elements with the actual updated values inside the html.
+  country_name.innerHTML=user_country;
+  total_cases_old_value.innerHTML=total_cases.toLocaleString();
+  //toLocaleString() method :converts a number to comma separated format javascript
+  total_cases_new_value.innerHTML=`+${new_total_cases.toLocaleString()}`;
+  recovered_old_value.innerHTML=recovered_cases.toLocaleString();
+  recovered_new_value.innerHTML=`+${new_recovered_cases.toLocaleString()}`;
+  deaths_old_value.innerHTML=death_cases.toLocaleString();
+  deaths_new_value.innerHTML=`+${new_death_cases.toLocaleString()}`;
+
+  // format's dates
+  dates.forEach((date) => {
+    formatedDates.push(formatDate(date));
+  });
+  const LastUpdated=document.querySelector('.last-updated');
+  const LastUpdates= formatedDates[formatedDates.length-1];
+  LastUpdated.innerText+= ` ${LastUpdates}`;
+}
+
+// line chart
+const ctx = document.getElementById("axes_line_chart").getContext("2d");
 // UPDATE CHART
 let my_chart;
 function axesLinearChart() {
   if (my_chart) {
     my_chart.destroy();
   }
-
   my_chart = new Chart(ctx, {
     type: "line",
     data: {
@@ -501,7 +499,6 @@ function axesLinearChart() {
     },
   });
 }
-
 
 // FORMAT DATES
 const monthsNames = [
