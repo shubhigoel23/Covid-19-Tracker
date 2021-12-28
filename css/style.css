@@ -34,7 +34,7 @@ section{
 
 html{
 font-size: 72.5%;
-overflow-x:hidden;
+/* overflow-x:hidden; */
 }
 
 /* header  */
@@ -516,7 +516,7 @@ header .navbar a:hover{
         }
 
   }
-  @media(max-width:991px){
+@media(max-width:991px){
 
 .container{
     display: block;
