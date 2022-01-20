@@ -1,8 +1,11 @@
 # Covid-19 Tracker
-About:
- Covid-19 Tracker Website that provides all the statistics related to Covid-19 cases based on the IP address across the globe and states specifically across India. Provides us with all covid related information example vaccination slots availability, preventions, symptoms, doctor’s help-desk, precautions, steps for proper hand-wash, etc.
+
+## About:
+
+Covid-19 Tracker Website that provides all the statistics related to Covid-19 cases based on the IP address across the globe and states specifically across India. Provides us with all covid related information example vaccination slots availability, preventions, symptoms, doctor’s help-desk, precautions, steps for proper hand-wash, etc.
  
-Setup Instructions:
+## Setup Instructions:
+
 1. Download or clone this repository.
 2. Install NodeJs runtime from https://nodejs.org/en/download/ , if not installed previously.
 3. Install node-fetch using the following command on your terminal: "npm install node-fetch".
@@ -10,8 +13,11 @@ Setup Instructions:
 5. Now if you want to run javascript file (containing .js extenstion) use: "node fileName.js" command where fileName is the name of the file.
 6. Download and Setup VPN Extension from the following link: "https://chrome.google.com/webstore/detail/setupvpn-lifetime-free-vp/oofgbpoabipfcfjapgnbbjjaenockbdp". Using this extension we can change our IP address acording to our own will.
 
+
 # Home page
+
 Statistics of Covid-19 cases worldwide.
+
 
 ![Screenshot (40)](https://user-images.githubusercontent.com/63581415/150397484-1ea05766-0981-488f-b5f9-68df6e7b7606.png)
 
@@ -27,11 +33,14 @@ Statistics of Covid-19 cases worldwide.
 
 ![Screenshot (30)](https://user-images.githubusercontent.com/63581415/150397907-da712449-df37-43b2-8d1b-87fef508b76c.png)
 
+
 # Country Specific statistics
+
 
 ![Screenshot (31)](https://user-images.githubusercontent.com/63581415/150398033-661e7bde-dc21-4ab0-87e0-798cbb5f7f16.png)
 
 ![Screenshot (32)](https://user-images.githubusercontent.com/63581415/150398223-237dd29d-3ec6-4d0f-b699-0971bf8ab6ac.png)
+
 
 # State wise statistics in INDIA 
 
