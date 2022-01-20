@@ -10,3 +10,8 @@ Setup Instructions:
 5. Now if you want to run javascript file (containing .js extenstion) use: "node fileName.js" command where fileName is the name of the file.
 6. Download and Setup VPN Extension from the following link: "https://chrome.google.com/webstore/detail/setupvpn-lifetime-free-vp/oofgbpoabipfcfjapgnbbjjaenockbdp". Using this extension we can change our IP address acording to our own will.
 
+# Home page
+Statistics of Covid-19 cases worldwide.
+
+![Screenshot (40)](https://user-images.githubusercontent.com/63581415/150397484-1ea05766-0981-488f-b5f9-68df6e7b7606.png)
+![Screenshot (25)](https://user-images.githubusercontent.com/63581415/150397565-1581264e-7139-47a5-b2ec-a2321a1988eb.png)
