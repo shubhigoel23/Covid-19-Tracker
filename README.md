@@ -14,7 +14,7 @@ Covid-19 Tracker Website that provides all the statistics related to Covid-19 ca
 6. Download and Setup VPN Extension from the following link: "https://chrome.google.com/webstore/detail/setupvpn-lifetime-free-vp/oofgbpoabipfcfjapgnbbjjaenockbdp". Using this extension we can change our IP address acording to our own will.
 
 
-# Home page
+## Home page
 
 Statistics of Covid-19 cases worldwide.
 
@@ -34,7 +34,7 @@ Statistics of Covid-19 cases worldwide.
 ![Screenshot (30)](https://user-images.githubusercontent.com/63581415/150397907-da712449-df37-43b2-8d1b-87fef508b76c.png)
 
 
-# Country Specific statistics
+## Country Specific statistics
 
 
 ![Screenshot (31)](https://user-images.githubusercontent.com/63581415/150398033-661e7bde-dc21-4ab0-87e0-798cbb5f7f16.png)
@@ -42,13 +42,13 @@ Statistics of Covid-19 cases worldwide.
 ![Screenshot (32)](https://user-images.githubusercontent.com/63581415/150398223-237dd29d-3ec6-4d0f-b699-0971bf8ab6ac.png)
 
 
-# State wise statistics in INDIA 
+## State wise statistics in INDIA 
 
 
 ![Screenshot (33)](https://user-images.githubusercontent.com/63581415/150398339-90a90df3-bf03-4e3a-83bb-7957fbb09fb3.png)
 
 
-# Vaccination 
+## Vaccination 
 
 
 ![Screenshot (34)](https://user-images.githubusercontent.com/63581415/150398392-f7d0616d-72a1-4bae-87fd-9c5418e90dd4.png)
