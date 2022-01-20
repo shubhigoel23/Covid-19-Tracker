@@ -15,3 +15,14 @@ Statistics of Covid-19 cases worldwide.
 
 ![Screenshot (40)](https://user-images.githubusercontent.com/63581415/150397484-1ea05766-0981-488f-b5f9-68df6e7b7606.png)
 ![Screenshot (25)](https://user-images.githubusercontent.com/63581415/150397565-1581264e-7139-47a5-b2ec-a2321a1988eb.png)
+
+![Screenshot (26)](https://user-images.githubusercontent.com/63581415/150397848-fa75d765-cc29-43ba-8621-48f8cad96fde.png)![Screenshot (27)](https://user-images.githubusercontent.com/63581415/150397857-4f72e752-b07e-463c-9cb7-f805f5546339.png)
+
+![Screenshot (28)](https://user-images.githubusercontent.com/63581415/150397872-bb9176a4-df3a-4db7-ae6d-2557c099e054.png)
+![Screenshot (29)](https://user-images.githubusercontent.com/63581415/150397887-f1290d64-c81e-4bc6-b320-02921ac2aa4b.png)
+![Screenshot (30)](https://user-images.githubusercontent.com/63581415/150397907-da712449-df37-43b2-8d1b-87fef508b76c.png)
+
+# Country Specific statistics
+
+![Screenshot (31)](https://user-images.githubusercontent.com/63581415/150398033-661e7bde-dc21-4ab0-87e0-798cbb5f7f16.png)
+
