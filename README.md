@@ -11,7 +11,7 @@ Covid-19 Tracker Website that provides all the statistics related to Covid-19 ca
 3. Install node-fetch using the following command on your terminal: "npm install node-fetch".
 4. In case you have downloaded the zip, extract the files and run 'cd "C:\Users\DELL\Downloads\Covid-19-Tracker-main\Covid-19-Tracker-main" ' on your terminal where "C:\Users\DELL\Downloads\Covid-19-Tracker-main\Covid-19-Tracker-main" is the path of the folder.
 5. Now if you want to run javascript file (containing .js extenstion) use: "node fileName.js" command where fileName is the name of the file.
-6. Download and Setup VPN Extension from the following link: "https://chrome.google.com/webstore/detail/setupvpn-lifetime-free-vp/oofgbpoabipfcfjapgnbbjjaenockbdp". Using this extension we can change our IP address acording to our own will.
+6. Download and Setup VPN Extension from the following link: "https://chrome.google.com/webstore/detail/setupvpn-lifetime-free-vp/oofgbpoabipfcfjapgnbbjjaenockbdp". Using this extension we can change our IP address according to our own will.
 
 
 ## Home page
