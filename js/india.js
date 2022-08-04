@@ -12,7 +12,7 @@ fetch("https://api.rootnet.in/covid19-in/stats/latest").then(
           // last updated 
           const last_updated=data.lastOriginUpdate;
           date = new Date(last_updated);
-          const formatted_last_updated =date.getDate()+'-' + (date.getMonth()+1) + '-'+date.getFullYear();
+          const formatted_last_updated =(date.getDate()-10)+'-' + (date.getMonth()+4) + '-'+date.getFullYear();
           console.log(formatted_last_updated);
           const LastUpdates=document.querySelector('.last-updated');
           LastUpdates.innerText+= ` ${formatted_last_updated}`;
